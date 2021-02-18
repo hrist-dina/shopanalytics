@@ -1,11 +1,17 @@
-extends layouts/default
+extends layouts/pages
 include helpers/mixins
 
 block variables
-	- const title = "gulp-pug-starter"
+	- const title = "Список страниц"
 
 block content
+	.container
+		h1 ShopAnalytics
+		br
+		hr
+		ul
+			li
+				a(href='register.html') Регистрация
+			li
+				a(href='auth.html') Вход
 
-block scripts
-	script(src="js/main.js")
-	script(src="js/vendor.js")

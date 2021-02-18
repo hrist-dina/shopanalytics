@@ -1,0 +1,67 @@
+@import "icons-data";
+@import "mixins";
+
+.icon {
+    @include outline-none;
+    @include transitionEaseOutQuint(background);
+    display: inline-block;
+    cursor: pointer;
+}
+
+.icon-burger {
+    @include icon-mobile-menu(2px, 22.5px);
+    box-sizing: border-box;
+    margin: auto 3px;
+    cursor: pointer;
+    background-color: #f8981d;
+    border-radius: 3px;
+
+    &:before {
+        @include icon-mobile-menu-before(2px, 22.5px, -6.5px, #f8981d);
+        box-sizing: border-box;
+        border-radius: 3px;
+    }
+
+    &:after {
+        @include icon-mobile-menu-after(2px, 22.5px, 7.5px, #f8981d);
+        box-sizing: border-box;
+        border-radius: 3px;
+    }
+
+    &.active {
+        transition: 0.5s;
+        background: transparent;
+
+        &:before {
+            width: 28px;
+            transform: rotateZ(45deg) translate(6px, 7px);
+        }
+
+        &:after {
+            width: 28px;
+            transform: rotateZ(-45deg) translate(6px, -7px);
+        }
+    }
+
+    &.active-fixed {
+        position: fixed;
+        z-index: 101;
+        top: 25px;
+        right: 20px;
+    }
+}
+
+.icon-mail {
+    @include wh(24px);
+    @include icon-bgc(icon-mail());
+}
+
+.icon-person {
+    @include wh(24px);
+    @include icon-bgc(icon-person());
+}
+
+.icon-lock {
+    @include wh(24px);
+    @include icon-bgc(icon-lock());
+}

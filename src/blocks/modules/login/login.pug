@@ -1,0 +1,47 @@
+
+mixin login-form(title)
+    +container
+        .login-form
+            h1.h1.login-form__title=title
+            form.form
+                block
+
+mixin login-register
+    include ../../components/ui-kit/ui-kit
+    +login-form(title || 'Регистрация')
+        .form-row
+            +field-icon('mail', 'email', 'Ваша почта', false, 'email')(required='true')
+        .form-row
+            .form-half
+                +field-icon('person', 'name', 'Имя')(required='true')
+            .form-half
+                +field-icon('lock', 'password', 'Пароль', false, 'password')(required='true')
+        .form-row
+            .form-half
+                +button-submit('Зарегистрироваться')
+        .form-row
+            .form-policy
+                | Регистрируясь на сайте, вы соглашаетесь с
+                br
+                +link('Политикой конфиденциальности')
+        .form-footer
+            .form-center
+                +link-bordered('Уже есть аккаунт', 'auth.html')
+
+mixin login-auth
+    include ../../components/ui-kit/ui-kit
+    +login-form(title || 'Вход')
+        .form-row
+            .form-half
+                +field-icon('mail', 'email', 'Ваша почта', false, 'email')(required='true')
+            .form-half
+                +field-icon('lock', 'password', 'Пароль', false, 'password')(required='true')
+        .form-row
+            .form-half
+                +button-submit('Войти')
+        .form-footer
+            .form-center
+                +link-bordered('Зарегистрироваться на сайте', 'register.html')
+
+
+

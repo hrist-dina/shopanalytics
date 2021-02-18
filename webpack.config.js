@@ -1,26 +1,26 @@
-const path = require("path");
-const webpack = require("webpack");
+const path = require('path')
+const webpack = require('webpack')
 
 module.exports = {
-    plugins: [ 
-        new webpack.ProvidePlugin({ 
-            "jQuery": "jquery", 
-            "window.jQuery": "jquery", 
-            "jquery": "jquery", 
-            "window.jquery": "jquery", 
-            "$": "jquery", 
-            "window.$": "jquery" 
-        }) 
+    plugins: [
+        new webpack.ProvidePlugin({
+            jQuery: 'jquery',
+            'window.jQuery': 'jquery',
+            jquery: 'jquery',
+            'window.jquery': 'jquery',
+            $: 'jquery',
+            'window.$': 'jquery'
+        })
     ],
-    
+
     entry: {
-        main: "./src/js/index.js",
+        main: './src/js/index.js'
     },
 
     output: {
-        filename: "[name].js",
-        chunkFilename: "[name].js",
-        publicPath: "/"
+        filename: '[name].js',
+        chunkFilename: '[name].js',
+        publicPath: '/'
     },
 
     optimization: {
@@ -28,8 +28,8 @@ module.exports = {
             cacheGroups: {
                 vendor: {
                     test: /node_modules/,
-                    chunks: "initial",
-                    name: "vendor",
+                    chunks: 'initial',
+                    name: 'vendor',
                     enforce: true
                 }
             }
@@ -42,11 +42,9 @@ module.exports = {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 use: {
-                    loader: "babel-loader",
+                    loader: 'babel-loader',
                     query: {
-                        presets: [
-                            ["@babel/preset-env", { modules: false }]
-                        ]
+                        presets: [['@babel/preset-env', { modules: false }]]
                     }
                 }
             }
@@ -55,8 +53,10 @@ module.exports = {
 
     resolve: {
         alias: {
-            "%modules%": path.resolve(__dirname, "src/blocks/modules"),
-            "%components%": path.resolve(__dirname, "src/blocks/components")
+            '%modules%': path.resolve(__dirname, 'src/blocks/modules'),
+            '%components%': path.resolve(__dirname, 'src/blocks/components'),
+            '%classes%': path.resolve(__dirname, 'src/js/classes'),
+            '%common%': path.resolve(__dirname, 'src/js/common')
         }
     }
-};
+}

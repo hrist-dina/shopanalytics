@@ -1,0 +1,19 @@
+include ../helpers/functions
+include ../helpers/mixins
+include ../../blocks/components/logo/logo
+block variables
+
+doctype html
+html(lang="ru")
+	include ../helpers/head
+
+	body.page-login(style="background-image: url(img/login/bg-login.png)")
+		header.header-login
+			+logo
+		main.page-login__main
+			block content
+
+		block scripts
+			script(src="/js/main.js")
+			script(src="/js/vendor.js")
+

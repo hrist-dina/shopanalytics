@@ -1,0 +1,10 @@
+.header {
+    &-login {
+        @include xl-block {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        margin-bottom: 30px;
+    }
+}

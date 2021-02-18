@@ -1,0 +1,59 @@
+mixin button(text, suffix, type)
+    button.button(type=type class=suffix ? `button--${suffix}` : '')&attributes(attributes)=text
+        block
+
+mixin button-link(text, suffix, href)
+    a.button(href=href || 'javascript:void(0)' class=suffix ? `button--${suffix}` : '')&attributes(attributes)=text ? text :''
+        block
+
+mixin link(text, href, suffix)
+    a.link(href=href || 'javascript:void(0)' class=suffix ? `link--${suffix}` : '')&attributes(attributes)=text
+
+mixin link-icon(text, iconType, href)
+    a.link-icon(href=href || 'javascript:void(0)')&attributes(attributes)
+        +icon(iconType)
+        span=text
+
+mixin field(name, placeholder, modifLabel, type)
+    label.field.js-field(class!=modifLabel)
+        span.field__placeholder
+            span.field__placeholder-text=placeholder
+        input.field__input.js-field-input(name=name type=type || 'text')&attributes(attributes)
+
+mixin field-icon(icon, name, placeholder, modifLabel, type)
+    label.field.js-field(class!=modifLabel)
+        span.field__inner
+            span.field__icon
+                +icon(icon)
+            span.field__body
+                span.field__placeholder=placeholder
+                input.field__input.js-field-input(name=name type=type || 'text')&attributes(attributes)
+
+mixin field-area(name, placeholder, modifLabel=null)
+    label.field(class=modifLabel)
+        span.field__placeholder
+            span.field__placeholder-text=placeholder
+        textarea.field__input.field__textarea(name=name type=type)&attributes(attributes)
+
+mixin field-file(name, placeholder, isMultiple = true)
+    label.field-file.js-field
+        span.field-file__placeholder=placeholder
+        input.field-file__input(name=`${name}${isMultiple ? '[]' : ''}` type='file' multiple!=isMultiple)&attributes(attributes)
+
+mixin field-checkbox(name, text, isChecked)
+    label.field-checkbox&attributes(attributes)
+        input.field-checkbox__input(type="checkbox" name=name checked!=isChecked)
+        .field-checkbox__custom
+        .field-checkbox__text=text
+
+mixin field-radio(name, value, text, isChecked)
+    label.field-radio&attributes(attributes)
+        input.field-radio__input(type="radio" name=name value=value checked!=isChecked)
+        .field-radio__custom
+        .field-radio__text=text
+
+mixin button-submit(text)
+    +button(text, 'submit', 'submit')
+
+mixin link-bordered(text, href)
+    +link(text, href, 'bordered')
