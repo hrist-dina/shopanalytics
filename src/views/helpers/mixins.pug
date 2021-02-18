@@ -1,0 +1,9 @@
+
+mixin container
+    .container&attributes(attributes)
+        block
+
+//- Блок иконки
+mixin icon(type)
+    i.icon(class=[ type ? `icon-${type}` : ''])&attributes(attributes)
+        block
