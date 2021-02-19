@@ -43,6 +43,7 @@ html, body {
 
 .container {
     @include container();
+    max-width: 1520px;
 }
 
 .page-login {

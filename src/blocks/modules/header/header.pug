@@ -1,0 +1,12 @@
+
+
+mixin header
+    header.header
+        +container
+            .__inner
+                .__toolbar
+                    h1.h1.__title=title
+                    .__person
+                if block
+                    .__data
+                        block
