@@ -1,6 +1,6 @@
 include ../helpers/functions
 include ../helpers/mixins
-include ../../blocks/components/logo/logo
+include ../../blocks/modules/sidebar/sidebar
 block variables
 
 doctype html
@@ -8,8 +8,7 @@ html(lang="ru")
 	include ../helpers/head
 
 	body.page-login(style="background-image: url(img/login/bg-login.png)")
-		header.header-login
-			+logo
+		+sidebar-logo.sidebar-logo--login
 		main.page-login__main
 			block content
 

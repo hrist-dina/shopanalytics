@@ -1,0 +1,18 @@
+-
+    const getItem = (name, icon, items) => ({icon, name, items})
+    const menu = {
+        body: [
+            getItem('Товары и цены', 'goods'),
+            getItem('Отчет', 'report', [
+                getItem('Сводные отчеты'),
+                getItem('Ценовые сегменты'),
+                getItem('Пересечение ассортимента')
+            ]),
+            getItem('Магазины', 'shop'),
+            getItem('Бренды', 'brand'),
+            getItem('Выгрузки', 'unload'),
+        ],
+        footer: [
+            getItem('Настройки', 'settings'),
+        ]
+    }

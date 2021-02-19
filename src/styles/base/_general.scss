@@ -19,17 +19,17 @@ html, body {
 
 .wrapper {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     min-height: 100%;
 }
 
-.footer {
-    flex: 0 0 auto;
-}
-
-.main-content {
-    flex: 1 0 auto;
+.aside-content {
     width: 100%;
+    max-width: 300px;
+}
+.main-content {
+    width: 100%;
+    max-width: #{calc(100% - 300px)};
     height: 100%;
 }
 
@@ -46,9 +46,6 @@ html, body {
 }
 
 .page-login {
-    @include lg-block {
-        height: 100%;
-    }
     box-sizing: border-box;
     position: relative;
     width: 100%;
@@ -56,11 +53,12 @@ html, body {
     margin: 0;
     background-repeat: no-repeat;
     background-position: center;
-    padding-bottom: 32px;
 
     &:before {
         content: "";
         position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
         min-height: 100vh;
@@ -70,8 +68,12 @@ html, body {
 
     &__main {
         @include lg-block {
-            height: 100%;
+            height: auto;
+            min-height: 100vh;
         }
+        padding-top: 32px;
+        padding-bottom: 32px;
+        box-sizing: border-box;
         display: flex;
         align-items: center;
         justify-content: center;

@@ -1,0 +1,34 @@
+
+mixin sidebar
+    .sidebar
+        .__inner
+            +sidebar-logo
+            +sidebar-menu
+
+
+mixin sidebar-menu
+    include data
+    .sidebar-menu
+        ul.sidebar-menu__list
+            for item in menu.body
+                +sidebar-item(item)
+        ul.sidebar-menu__list
+            for item in menu.footer
+                +sidebar-item(item)
+
+
+mixin sidebar-item(item)
+    li.sidebar-menu__item
+        a(href='#' class={'active': activeMenu === item.icon}).sidebar-menu__link
+            if item.icon
+                +icon(item.icon).sidebar-menu__icon
+            span.sidebar-menu__name=item.name
+        if item.items
+            ul.sidebar-menu__list
+                for child in item.items
+                    +sidebar-item(child)
+
+mixin sidebar-logo
+    include ../../../blocks/components/logo/logo
+    .sidebar-logo&attributes(attributes)
+        +logo

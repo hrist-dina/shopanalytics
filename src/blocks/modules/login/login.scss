@@ -1,14 +1,19 @@
 .login {
-    &-form {
+    &-inner {
         @include lg-block {
             padding: 79px 98px 60px;
         }
+        overflow-y: auto;
         box-sizing: border-box;
+        padding: 32px;
+    }
+
+    &-form {
+
         position: relative;
         z-index: 1;
         width: 100%;
         max-width: 720px;
-        padding: 32px;
         background: #fff;
 
         &__title {

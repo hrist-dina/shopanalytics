@@ -2,9 +2,10 @@
 mixin login-form(title)
     +container
         .login-form
-            h1.h1.login-form__title=title
-            form.form
-                block
+            .login-inner
+                h1.h1.login-form__title=title
+                form.form
+                    block
 
 mixin login-register
     include ../../components/ui-kit/ui-kit

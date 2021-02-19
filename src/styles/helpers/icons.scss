@@ -65,3 +65,34 @@
     @include wh(24px);
     @include icon-bgc(icon-lock());
 }
+
+.icon-goods {
+    @include wh(24px);
+    @include icon-bgc(icon-goods());
+}
+
+.icon-report {
+    @include wh(24px);
+    @include icon-bgc(icon-report());
+}
+
+.icon-shop {
+    @include wh(24px);
+    @include icon-bgc(icon-shop());
+}
+
+.icon-brand {
+    @include wh(24px);
+    @include icon-bgc(icon-brand());
+}
+
+.icon-unload {
+    @include wh(24px);
+    @include icon-bgc(icon-unload());
+}
+
+.icon-settings {
+    @include wh(24px);
+    @include icon-bgc(icon-settings());
+}
+
