@@ -1,0 +1,138 @@
+
+
+mixin table
+    section.table-section
+        +container
+            .table-wrap
+                table.table
+                    thead
+                        tr
+                            th
+                                span.table-head-val №
+                                +table-sort
+                            th.no-wrap
+                                span.table-head-val Магазины
+                                +table-sort
+                            th
+                                span.table-head-val Бренд
+                                +table-sort
+                            th.long
+                                span.table-head-val Название товара
+                                +table-sort('по релевантности')
+                            th.text-right
+                                span.table-head-val Цена, руб.
+                                +table-sort
+                            th.text-right
+                                span.table-head-val Цена по акции, руб.
+                                +table-sort
+                            th
+                                span.table-head-val №
+                                +table-sort
+                            th.no-wrap
+                                span.table-head-val Магазины
+                                +table-sort
+                            th
+                                span.table-head-val Бренд
+                                +table-sort
+                            th
+                                span.table-head-val Название товара
+                                +table-sort('по релевантности')
+                            th.text-right
+                                span.table-head-val Цена, руб.
+                                +table-sort
+                            th.text-right
+                                span.table-head-val Цена по акции, руб.
+                                +table-sort
+                    tbody
+                        +table-row(
+                            '11108542',
+                            'vasco.ru',
+                            'Electrolux',
+                            'Вертикальная стиральная машина, Electrolux EW6T5R061 Steam',
+                            '26 900.00',
+                            '26 900.00'
+                        )
+                        +table-row(
+                            '11108542123',
+                            'www.eldorado.ru',
+                            'Hisense',
+                            'Холодильник, Hisense RB-406N4AD1',
+                            '126 900.00',
+                            '96 900.00'
+                        )
+                        +table-row(
+                            '11108',
+                            'www.mvideo.ru',
+                            'Indesit',
+                            'Фронтальная стиральная машина, Indesit IWSC 5105',
+                            '1 260 900.00',
+                            '960 900.00'
+                        )
+                        +table-row(
+                            '11108543',
+                            'vasco.ru',
+                            'Hisense',
+                            'Холодильник Side-by-Side, Hisense RQ-56WC4SAW',
+                            '16 900.00',
+                            '9 900.00'
+                        )
+                        +table-row(
+                            '11108544',
+                            'www.dns-shop.ru',
+                            'Electrolux',
+                            'Вертикальная стиральная машина, Electrolux EW6T5R061 Steam',
+                            '26 900.00',
+                            '22 900.00'
+                        )
+                        +table-row(
+                            '11108545',
+                            'vasco.ru',
+                            'Hisense',
+                            'Холодильник, Hisense RB-406N4AD1',
+                            '26 900.00',
+                            '22 900.00'
+                        )
+                        +table-row(
+                            '11108546',
+                            'vasco.ru',
+                            'Indesit',
+                            'Фронтальная стиральная машина, Indesit IWSC 5105',
+                            '26 900.00',
+                            '22 900.00'
+                        )
+                        +table-row(
+                            '11108546',
+                            'vasco.ru',
+                            'Hisense',
+                            'Холодильник Side-by-Side, Hisense RQ-56WC4SAW',
+                            '26 900.00',
+                            '22 900.00'
+                        )
+            .table-footer
+
+
+mixin table-row(number, shop, brand, product, price, priceSale)
+    tr
+        td=number
+        td.no-wrap=shop
+        td=brand
+        td.long
+            b=product
+        td.text-right=price
+        td.text-right=priceSale
+        td=number
+        td.no-wrap=shop
+        td=brand
+        td.long
+            b=product
+        td.text-right=price
+        td.text-right=priceSale
+
+
+mixin table-sort(title)
+    span.table-sort
+        span.table-sort-nav
+            a(href='#').table-sort-up.active
+            a(href='#').table-sort-down
+        if title
+            span.table-sort-title=title

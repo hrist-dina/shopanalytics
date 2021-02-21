@@ -4,5 +4,12 @@
 
     &__toolbar {
         margin-bottom: 48px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    &__data {
+        margin-bottom: 20px;
     }
 }

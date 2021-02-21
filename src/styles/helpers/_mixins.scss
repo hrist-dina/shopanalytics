@@ -144,8 +144,8 @@
     @include transitionSomeProps(
         $properties,
         $duration,
-                    cubic-bezier(0.23, 1, 0.32, 1),
-                    $delay
+        cubic-bezier(0.23, 1, 0.32, 1),
+        $delay
     );
 }
 
@@ -205,24 +205,26 @@
 }
 
 
-@mixin scroll-custom {
+@mixin custom-scroll-horizontal($bg: #ECEFF1, $thumb: #0575E6, $height: 6px, $b-radius: 4px) {
     /* Firefox */
-    scrollbar-color: #f0ae76 #fff;
+    scrollbar-color: $thumb $bg;
     scrollbar-width: thin;
 
     &::-webkit-scrollbar {
-        width: 3px;
+        height: $height;
     }
     &::-webkit-scrollbar-track {
         box-sizing: border-box;
         border: none;
-        background: #fff;
+        background: $bg;
+        border-radius: $b-radius;
     }
 
     &::-webkit-scrollbar-thumb {
         box-sizing: border-box;
         border: none;
-        background-color: #f0ae76;
+        background-color: $thumb;
         outline: none;
+        border-radius: $b-radius;
     }
 }

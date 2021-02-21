@@ -1,0 +1,128 @@
+.table {
+    box-sizing: inherit;
+    width: 100%;
+    border: none;
+    border-collapse: collapse;
+    border-spacing: 0;
+
+    &-section {
+        margin-top: 48px;
+    }
+
+    &-wrap {
+        @include custom-scroll-horizontal();
+        padding-bottom: 28px;
+        overflow-x: auto;
+    }
+
+
+    &-head {
+        &-val {
+            vertical-align: middle;
+        }
+    }
+
+    &-sort {
+        display: inline-flex;
+        align-items: center;
+        margin-left: 12px;
+        vertical-align: middle;
+
+        &-nav {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &-down {
+            @include wh(10px, 6px);
+            @include icon-bgc(icon-down());
+            margin-top: 4px;
+
+            &.active {
+                background-image: url(icon-down("0575E6"));
+            }
+        }
+
+        &-up {
+            @include wh(10px, 6px);
+            @include icon-bgc(icon-up());
+            &.active {
+                background-image: url(icon-up("0575E6"));
+            }
+        }
+
+        &-title {
+            font-size: 14px;
+            line-height: 20px;
+            letter-spacing: 0.25px;
+            color: #c6cacc;
+            margin-left: 12px;
+            font-weight: $normal;
+        }
+    }
+
+    & th {
+        border: none;
+        border-bottom: 2px solid #e3e5e6;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 20px;
+        color: #919699;
+        text-align: left;
+        padding-bottom: 12px;
+        white-space: nowrap;
+        padding-right: 30px;
+    }
+
+    & td {
+        font-weight: $normal;
+        font-size: 14px;
+        line-height: 20px;
+        color: #5e6366;
+        padding-top: 14px;
+        padding-bottom: 14px;
+        padding-right: 30px;
+        border-bottom: 1px solid #e3e5e6;
+
+        & b {
+            color: rgba(0, 0, 0, 0.87);
+        }
+
+        & a {
+            text-decoration: none;
+            font-size: 14px;
+            line-height: 20px;
+            color: #5e6366;
+
+            &:hover {
+                color: rgba(0, 0, 0, 0.87);
+            }
+        }
+    }
+
+    & tr:last-child td {
+        border-bottom: 0;
+    }
+
+    & tbody tr:hover {
+        background: #f7f9fa;
+        border-radius: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    & th.no-wrap, & td.no-wrap {
+        white-space: nowrap;
+    }
+
+    & th.long, & td.long {
+        min-width: 600px;
+    }
+
+    & th.text-right, & td.text-right {
+        text-align: right;
+        padding-left: 30px;
+    }
+}

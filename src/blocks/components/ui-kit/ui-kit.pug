@@ -6,6 +6,12 @@ mixin button-link(text, suffix, href)
     a.button(href=href || 'javascript:void(0)' class=suffix ? `button--${suffix}` : '')&attributes(attributes)=text ? text :''
         block
 
+mixin button-link-icon(text, suffix, icon, href)
+    a.button(href=href || 'javascript:void(0)' class=suffix ? `button--${suffix}` : '')&attributes(attributes)
+        +icon(icon).__icon
+        span.__text=text
+
+
 mixin link(text, href, suffix)
     a.link(href=href || 'javascript:void(0)' class=suffix ? `link--${suffix}` : '')&attributes(attributes)=text
 

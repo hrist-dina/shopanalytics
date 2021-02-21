@@ -96,3 +96,7 @@
     @include icon-bgc(icon-settings());
 }
 
+.icon-plus {
+    @include wh(16px);
+    @include icon-bgc(icon-plus());
+}
