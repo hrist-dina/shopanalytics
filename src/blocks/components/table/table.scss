@@ -15,7 +15,6 @@
         overflow-x: auto;
     }
 
-
     &-head {
         &-val {
             vertical-align: middle;
@@ -124,5 +123,59 @@
     & th.text-right, & td.text-right {
         text-align: right;
         padding-left: 30px;
+    }
+
+    &-footer {
+        @include row-flex;
+        margin-top: 60px;
+
+        &__left, &__right {
+            @include col;
+            @include size(6);
+        }
+
+        &__right {
+            text-align: right;
+        }
+    }
+
+    &-result {
+        font-weight: $normal;
+        font-size: 14px;
+        line-height: 24px;
+        color: #9fa2b4;
+    }
+
+    &-nav {
+        display: inline-flex;
+        align-items: center;
+
+        &__text {
+            font-weight: $normal;
+            font-size: 14px;
+            line-height: 20px;
+            text-align: right;
+            color: #9fa2b4;
+        }
+
+        &__block {
+            margin-left: 24px;
+            display: inline-flex;
+        }
+
+        &__left, &__right {
+            @include wh(24px);
+            display: inline-flex;
+            text-decoration: none;
+        }
+
+        &__left {
+            @include icon-bgc(icon-arrow-left());
+        }
+
+        &__right {
+            @include icon-bgc(icon-arrow-right());
+            margin-left: 12px;
+        }
     }
 }

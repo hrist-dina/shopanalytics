@@ -10,6 +10,12 @@ class UiKit {
         new Field()
         new Dropdown()
         new Select()
+        new Select('.js-select-round', 'round', {
+            minimumResultsForSearch: Infinity,
+            addFooter: false,
+            closeOnSelect: true,
+            allowClear: false
+        })
     }
 }
 

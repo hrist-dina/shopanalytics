@@ -2,9 +2,56 @@
     margin-top: 24px;
 
     &__inner {
-        display: flex;
+        @include row-flex;
+
+        &-left {
+            @include col;
+            @include size(8);
+        }
+
+        &-right {
+            @include col;
+            @include size(4);
+            justify-content: flex-end;
+            text-align: right;
+        }
+    }
+
+    &__select-list {
+        display: inline-flex;
         flex-wrap: wrap;
         align-items: flex-start;
+        margin-top: -8px;
+        margin-left: -8px;
+        width: 100%;
+    }
+
+    &__tag {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        border: 1px solid rgba(5, 117, 230, 0.15);
+        padding: 10px 16px;
+        background: rgba(5, 117, 230, 0.1);
+        border-radius: 22px;
+        font-size: 14px;
+        line-height: 20px;
+        color: #404040;
+        margin-left: 8px;
+        margin-top: 8px;
+
+        &-list {
+            display: inline-flex;
+            flex-wrap: wrap;
+        }
+
+        &-clear {
+            @include wh(16px);
+            @include icon-bgc(icon-cross());
+            margin-left: 12px;
+            text-decoration: none;
+        }
     }
 
     & .select, & .select2 {
@@ -12,7 +59,8 @@
         max-width: 600px;
     }
 
-    & .select2 ~ .select2 {
+    & .select2, & .dropdown {
         margin-left: 8px;
+        margin-top: 8px;
     }
 }

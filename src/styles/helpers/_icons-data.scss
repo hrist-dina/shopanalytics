@@ -49,3 +49,15 @@
 @function icon-check($color: "fff") {
     @return "data:image/svg+xml,%3Csvg width='13' height='11' viewBox='0 0 13 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.5 6L4.72727 10L12 1' stroke='%23#{$color}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A";
 }
+
+@function icon-cross($color: "443E3E") {
+    @return "data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 3L8.00003 8M8.00003 8L13 3M8.00003 8L3 13M8.00003 8L13 13' stroke='%23#{$color}' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A";
+}
+
+@function icon-arrow-left($color: "9FA2B4") {
+    @return "data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15 18L9.07071 12.0707C9.03166 12.0317 9.03166 11.9683 9.07071 11.9293L15 6' stroke='%23#{$color}' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E%0A";
+}
+
+@function icon-arrow-right($color: "9FA2B4") {
+    @return "data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 18L14.9293 12.0707C14.9683 12.0317 14.9683 11.9683 14.9293 11.9293L9 6' stroke='%23#{$color}' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E%0A";
+}

@@ -108,7 +108,7 @@
 
     & .select2-results {
         height: 100%;
-        padding-top: 8px;
+        padding-top: 12px;
         padding-bottom: 8px;
 
         & .scroller__content {
@@ -197,7 +197,6 @@
         min-height: 40px;
         border: 1px solid #d8d8d8;
         padding: 6px 16px;
-        margin-bottom: 10px;
         border-radius: 4px;
 
         &:not(.select2-selection--clearable) {
@@ -285,6 +284,7 @@
 
     &.select2-container--open.select2-container--below .select2-selection--multiple {
         border-radius: 4px;
+        margin-bottom: 10px;
     }
 }
 
@@ -364,6 +364,81 @@
 
         &:hover {
             background-color: #ecf1f5;
+        }
+    }
+}
+
+
+.select2-container--round {
+    .select2-selection--single {
+        height: auto;
+        padding: 8px 16px;
+        background: #eceff1;
+        border-radius: 16px;
+        font-weight: $normal;
+        font-size: 15px;
+        line-height: 16px;
+        color: #404040;
+
+        .select2-selection__rendered {
+            padding-left: 0;
+            padding-right: 16px;
+        }
+
+        .select2-selection__arrow {
+            position: absolute;
+            top: 1px;
+            right: 1px;
+            width: 32px;
+            height: 32px;
+
+            & b {
+                @include transitionEaseOutQuint(transform);
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                height: 0;
+                margin: auto;
+                border-style: solid;
+                border-width: 4px 4px 0 4px;
+                border-color: #274655 transparent transparent transparent;
+            }
+        }
+    }
+
+    &.select2-container--open {
+        .select2-selection--single {
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+        .select2-selection__arrow b {
+            @include rotate();
+        }
+    }
+
+    & .select2-dropdown {
+        border: none;
+        background: #eceff1;
+        border-bottom-left-radius: 16px;
+        border-bottom-right-radius: 16px;
+    }
+
+    & .select2-results__option {
+        font-weight: $normal;
+        font-size: 15px;
+        line-height: 16px;
+        color: #404040;
+        padding: 8px 16px;
+
+        &:last-child {
+            border-bottom-left-radius: 16px;
+            border-bottom-right-radius: 16px;
+        }
+        &.select2-results__option--highlighted {
+            background: #bfc3c4;
         }
     }
 }

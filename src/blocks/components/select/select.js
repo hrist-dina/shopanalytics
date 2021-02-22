@@ -20,7 +20,8 @@ export default class Select {
             placeholder: 'Выбрать',
             allowHtml: true,
             allowClear: true,
-            tags: false
+            tags: false,
+            addFooter: true
         }
 
         this.options = $.extend(this.baseOptions, options)
@@ -30,22 +31,27 @@ export default class Select {
 
     init() {
         $(this.selector).each((_, el) => {
-            console.log(el)
-            $(el)
-                .select2(this.options)
-                .on('select2:open', function () {
-                    let a = $(this).data('select2')
-                    if (!$('.select2-link').length) {
-                        a.$results
-                            .parents('.select2-results')
-                            .append(
-                                '<div class="select2-link select2__footer"><button class="button button--primary" type="submit">Применить</button></div>'
-                            )
-                            .on('click', function (b) {
-                                console.log(b)
-                            })
-                    }
-                })
+            $(el).select2(this.options)
+
+            if (this.options.addFooter) {
+                this.addFooterWithButton(el)
+            }
+        })
+    }
+
+    addFooterWithButton(el) {
+        $(el).on('select2:open', function () {
+            let select = $(this).data('select2')
+            if (!$('.select2-link').length) {
+                select.$results
+                    .parents('.select2-results')
+                    .append(
+                        '<div class="select2-link select2__footer"><button class="button button--primary" type="submit">Применить</button></div>'
+                    )
+                    .on('click', function (b) {
+                        console.log(b)
+                    })
+            }
         })
     }
 }

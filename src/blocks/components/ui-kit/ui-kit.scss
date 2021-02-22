@@ -314,10 +314,6 @@
         margin-left: 18px;
     }
 
-    .select ~ &--simple {
-        margin-left: 8px;
-    }
-
     &__select {
         @include transitionEaseOutQuint(box-shadow);
         font-weight: 500;
@@ -356,7 +352,7 @@
         border-radius: 4px;
         opacity: 0;
         visibility: hidden;
-        transition: all .3s ease-in;
+        transition: all .2s ease-in;
     }
 
     &__list {
@@ -377,6 +373,7 @@
         padding-top: 16px;
         border-top: 1px solid #e3e5e5;
     }
+
 
     &--simple & {
         &__select {
