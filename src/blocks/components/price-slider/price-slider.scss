@@ -1,0 +1,82 @@
+@mixin filter-container {
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.price-slider {
+    margin-bottom: 15px;
+    width: 100%;
+
+    &__title {
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 18px;
+        color: #404040;
+        margin-bottom: 20px;
+    }
+
+    &__name {
+        font-size: 12px;
+        line-height: 24px;
+        color: #32394d;
+        font-weight: 600;
+        margin-bottom: 12px;
+    }
+
+    &__list {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        margin-bottom: 12px;
+        width: 100%;
+
+        &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 150px;
+            height: 2px;
+            margin: auto;
+            background-color: #ededed;
+        }
+    }
+
+    &__list-sub {
+        margin-top: 12px;
+        margin-bottom: 18px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__sub {
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 16px;
+        color: #95a7b9;
+    }
+
+    &__input {
+        box-sizing: border-box;
+        max-width: 80px;
+        border: none;
+        padding: 0;
+        background: #fff;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 21px;
+        color: #404040;
+
+        &:after, &:focus {
+            border: none;
+            outline: none;
+        }
+    }
+
+    &__item:last-child &__input {
+        text-align: right;
+    }
+}

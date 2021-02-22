@@ -1,0 +1,6 @@
+
+mixin select(options, nameSelect, jsSelector)
+    if options
+        select(name=nameSelect class=['select', jsSelector || "js-select"])&attributes(attributes)
+            for option in options
+                option(value=option.value)=option.name

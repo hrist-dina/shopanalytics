@@ -204,6 +204,31 @@
     justify-content: flex-end;
 }
 
+@mixin custom-scroll($bg: #ECEFF1, $thumb: #0575E6, $width: 6px, $b-radius: 4px) {
+    /* Firefox */
+    scrollbar-color: $thumb $bg;
+    scrollbar-width: thin;
+
+    &::-webkit-scrollbar {
+        width: $width;
+    }
+    &::-webkit-scrollbar-track {
+        box-sizing: border-box;
+        border: none;
+        background: $bg;
+        border-radius: $b-radius;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        box-sizing: border-box;
+        border: none;
+        background-color: $thumb;
+        outline: none;
+        border-radius: $b-radius;
+    }
+}
+
+
 
 @mixin custom-scroll-horizontal($bg: #ECEFF1, $thumb: #0575E6, $height: 6px, $b-radius: 4px) {
     /* Firefox */
@@ -226,5 +251,18 @@
         background-color: $thumb;
         outline: none;
         border-radius: $b-radius;
+    }
+}
+
+@mixin arrow-select($parent, $color: #274655) {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 4px 4px 0 4px;
+    border-color: $color transparent transparent transparent;
+
+    #{$parent}.active & {
+        border-width: 0 4px 4px 4px;
+        border-color: transparent transparent $color transparent;
     }
 }

@@ -1,0 +1,45 @@
+
+
+mixin filter
+    include data
+    include ../select/select
+    include ../ui-kit/ui-kit
+    include ../price-slider/price-slider
+    section.filter
+        +container
+            .__inner
+                +select(selectShop, 'shops')(multiple="multiple" data-placeholder='Магазины')
+                +select(selectGoods, 'goods')(data-placeholder='Товары')
+                +select(selectBrands, 'brands')(data-placeholder='Бренды')
+                +dropdown('Цена, руб').dropdown--simple
+                    +price-slider({
+                        title: 'Цена, руб.',
+                        jsClass: 'js-price-slider',
+                        step: 100,
+                        price: {
+                            default: {
+                                min: 0,
+                                max: 50000,
+                            },
+                            filtered: {
+                                min: 10000,
+                                max: 30000,
+                            }
+                        }
+                    })
+                +dropdown('Цена по акции, руб').dropdown--simple
+                    +price-slider({
+                        title: 'Цена по акции, руб',
+                        jsClass: 'js-price-slider',
+                        step: 100,
+                        price: {
+                            default: {
+                                min: 0,
+                                max: 50000,
+                            },
+                            filtered: {
+                                min: 10000,
+                                max: 30000,
+                            }
+                        }
+                    })

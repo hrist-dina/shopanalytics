@@ -9,9 +9,12 @@ block content
 	include ../../blocks/modules/header/header
 	include ../../blocks/components/table/table
 	include ../../blocks/components/ui-kit/ui-kit
+	include ../../blocks/components/filter/filter
 	+header
 		+button-link-icon('Добавить мониторинг', 'add', 'plus')
+		+dropdown('Показывать колонки')
 
+	+filter
 	+table
 
 

@@ -1,15 +1,15 @@
 import $ from 'jquery'
 import ComponentBase from '%classes%/ComponentBase'
-//import Select from '%components%/select/select'
+import Select from '%components%/select/select'
 
 class UiKit {
     constructor() {
         this.init()
     }
     init() {
-        console.log('test')
         new Field()
-        // new Select()
+        new Dropdown()
+        new Select()
     }
 }
 
@@ -23,7 +23,6 @@ class Field extends ComponentBase {
     init() {
         this.fieldInput = `${this.selector}-input`
 
-        console.log(this.fieldInput)
         $(document)
             .find(this.selector)
             .each((i, elem) => {
@@ -54,18 +53,39 @@ class Field extends ComponentBase {
                 fieldInput.closest(this.selector).removeClass('active')
             }
         })
-
-        if ($(elem).is('select')) {
-            $(elem).on('change.select2', e => {
-                const fieldInput = $(e.target)
-                const label = fieldInput.closest(this.selector)
-                if (fieldInput.val()) {
-                    label.addClass('active')
-                } else {
-                    label.removeClass('active')
-                }
-            })
-        }
     }
 }
+
+export const selectorDropdown = '.js-dropdown'
+
+class Dropdown extends ComponentBase {
+    constructor(selector = selectorDropdown) {
+        super(selector)
+    }
+
+    init() {
+        this.classSelect = `${this.selector}-select`
+        this.classBox = `${this.selector}-box`
+
+        $(document)
+            .find(this.selector)
+            .each((_, elem) => this.initEvents(elem))
+    }
+
+    initEvents(elem) {
+        const select = $(elem).find(this.classSelect)
+
+        select.on('click', ({ target }) => {
+            $(this.selector).removeClass('open')
+            const dd = $(target).closest(this.selector)
+            dd.toggleClass('open')
+        })
+        $(document).on('click', ({ target }) => {
+            if (!$(target).closest(this.selector).length) {
+                $(this.selector).removeClass('open')
+            }
+        })
+    }
+}
+
 export default UiKit

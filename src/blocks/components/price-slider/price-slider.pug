@@ -1,0 +1,25 @@
+mixin price-slider(item, customClass)
+    .price-slider(class=item.jsClass)&attributes(attributes)
+        if item.title
+            .__title=item.title
+        .__list(class=customClass ? `${customClass}__list` : '')
+            label.__item
+                input.__input(
+                    class=`${item.jsClass}-min`
+                    type='text'
+                    name='min'
+                    value=item.price.filtered.min
+                    data-min=item.price.default.min
+                )
+            label.__item
+                input.__input(
+                    class=`${item.jsClass}-max`
+                    type='text'
+                    name='max'
+                    value=item.price.filtered.max
+                    data-max=item.price.default.max
+                )
+        .__list-sub
+            .__sub От
+            .__sub До
+        div(class=`${item.jsClass}-drag` data-step=item.step)

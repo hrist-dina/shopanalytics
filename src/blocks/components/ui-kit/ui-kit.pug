@@ -46,9 +46,9 @@ mixin field-file(name, placeholder, isMultiple = true)
         span.field-file__placeholder=placeholder
         input.field-file__input(name=`${name}${isMultiple ? '[]' : ''}` type='file' multiple!=isMultiple)&attributes(attributes)
 
-mixin field-checkbox(name, text, isChecked)
+mixin field-checkbox(name, value, text, isChecked)
     label.field-checkbox&attributes(attributes)
-        input.field-checkbox__input(type="checkbox" name=name checked!=isChecked)
+        input.field-checkbox__input(type="checkbox" name=name value=value checked!=isChecked)
         .field-checkbox__custom
         .field-checkbox__text=text
 
@@ -63,3 +63,24 @@ mixin button-submit(text)
 
 mixin link-bordered(text, href)
     +link(text, href, 'bordered')
+
+
+mixin dropdown(title)
+    form.dropdown.js-dropdown(metod='get')&attributes(attributes)
+        .__select.js-dropdown-select
+            span.__title=title
+            span._arrow
+        .__box.js-dropdown-box
+            .__list
+                if block
+                    block
+                else
+                    +field-checkbox('column[]', 'number', '№').__item
+                    +field-checkbox('column[]', 'shop', 'Магазин', true).__item
+                    +field-checkbox('column[]', 'brand', 'Бренды').__item
+                    +field-checkbox('column[]', 'name', 'Название товара', true).__item
+                    +field-checkbox('column[]', 'price', 'Цена', true).__item
+                    +field-checkbox('column[]', 'price_sale', 'Цена по акции', true).__item
+            .__footer
+                +button('Применить', 'primary', 'submit')
+

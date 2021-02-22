@@ -77,7 +77,10 @@
     },
     "dependencies": {
         "jquery": "^3.5.1",
-        "smart-grid": "^2.1.2"
+        "nouislider": "^14.6.3",
+        "select2": "^4.1.0-rc.0",
+        "smart-grid": "^2.1.2",
+        "wnumb": "^1.2.0"
     },
     "husky": {
         "hooks": {
