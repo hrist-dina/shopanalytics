@@ -310,10 +310,6 @@
     position: relative;
     vertical-align: top;
 
-    .button + & {
-        margin-left: 18px;
-    }
-
     &__select {
         @include transitionEaseOutQuint(box-shadow);
         font-weight: 500;
@@ -333,18 +329,24 @@
     }
 
     &__arrow {
+        @include sm-block {
+            margin-left: 8px;
+        }
         @include arrow-select(".dropdown");
-        margin-left: 8px;
+        margin-left: auto;
         transition: transform .3s ease-in-out;
     }
 
     &__box {
+        @include md-block {
+            min-width: 370px;
+        }
         box-sizing: border-box;
         position: absolute;
         z-index: -1;
         top: 58px;
         left: 0;
-        min-width: 370px;
+        min-width: 100%;
         border: 1px solid #e3e5e5;
         padding: 16px;
         background: #ffffff;

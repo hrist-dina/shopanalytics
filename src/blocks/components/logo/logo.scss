@@ -1,6 +1,10 @@
 .logo {
-    padding-top: 47px;
-    padding-left: 61px;
+    @include lg-block {
+        padding-top: 47px;
+        padding-left: 61px;
+    }
+    padding-top: 36px;
+    padding-left: 40px;
     position: relative;
     z-index: 1;
 }

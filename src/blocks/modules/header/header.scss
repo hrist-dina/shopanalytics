@@ -1,15 +1,68 @@
 .header {
-    padding-top: 50px;
+    @include sm-block {
+        padding-top: 50px;
+    }
+    padding-top: 15px;
     border-bottom: 1px solid #ededed;
 
-    &__toolbar {
-        margin-bottom: 48px;
+    &__top {
         display: flex;
         align-items: flex-start;
+    }
+
+    &__title {
+        @include sm-block {
+            margin-bottom: 0;
+        }
+        margin-bottom: 20px;
+    }
+
+    &__mobile-menu {
+        @include wh(25px);
+        @include lg-block {
+            display: none;
+        }
+        display: inline-flex;
+        margin-top: 4px;
+        margin-bottom: 10px;
+    }
+
+    &__toolbar {
+        @include lg-block {
+            width: 100%;
+            margin-left: 0;
+        }
+        @include sm-block {
+            margin-bottom: 48px;
+            flex-direction: row;
+        }
+        margin-left: 15px;
+        display: inline-flex;
+        flex-direction: column;
+        align-items: flex-start;
         justify-content: space-between;
+        width: #{calc(100% - 50px)};
+        margin-bottom: 24px;
     }
 
     &__data {
         margin-bottom: 20px;
+
+        & .button {
+            @include sm-block {
+                margin-right: 18px;
+                margin-bottom: 0;
+                width: auto;
+            }
+            width: 100%;
+            margin-bottom: 12px;
+        }
+
+        & .dropdown {
+            @include sm-block {
+                width: auto;
+            }
+            width: 100%;
+        }
     }
 }

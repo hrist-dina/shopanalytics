@@ -2,18 +2,27 @@
     margin-top: 24px;
 
     &__inner {
-        @include row-flex;
+        @include sm-block {
+            @include row-flex;
+        }
 
         &-left {
-            @include col;
-            @include size(8);
+            @include sm-block {
+                @include col;
+                @include size(8);
+            }
+            width: 100%;
         }
 
         &-right {
-            @include col;
-            @include size(4);
-            justify-content: flex-end;
-            text-align: right;
+            @include sm-block {
+                @include col;
+                @include size(4);
+                justify-content: flex-end;
+                text-align: right;
+            }
+            width: 100%;
+            margin-left: -8px;
         }
     }
 
@@ -55,11 +64,14 @@
     }
 
     & .select, & .select2 {
-        width: auto !important;
         max-width: 600px;
     }
 
     & .select2, & .dropdown {
+        @include sm-block {
+            width: auto !important;
+        }
+        width: 100% !important;
         margin-left: 8px;
         margin-top: 8px;
     }

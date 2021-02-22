@@ -82,9 +82,14 @@ class Dropdown extends ComponentBase {
         const select = $(elem).find(this.classSelect)
 
         select.on('click', ({ target }) => {
-            $(this.selector).removeClass('open')
             const dd = $(target).closest(this.selector)
-            dd.toggleClass('open')
+            $(this.selector).each((_, item) => {
+                if (item === dd[0]) {
+                    dd.toggleClass('open')
+                } else {
+                    $(item).removeClass('open')
+                }
+            })
         })
         $(document).on('click', ({ target }) => {
             if (!$(target).closest(this.selector).length) {

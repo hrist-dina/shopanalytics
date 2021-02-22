@@ -5,10 +5,13 @@ mixin header
     header.header
         +container
             .__inner
-                .__toolbar
-                    h1.h1.__title=title
-                    .__person
-                        +person
+                .__top
+                    .__mobile-menu
+                        +icon('burger')._mobile-menu-icon.js-sidebar-menu
+                    .__toolbar
+                        h1.h1.__title=title
+                        .__person
+                            +person
                 if block
                     .__data
                         block

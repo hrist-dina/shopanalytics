@@ -19,12 +19,17 @@ mixin sidebar-menu
 
 mixin sidebar-item(item)
     li.sidebar-menu__item
-        a(href='#' class={'active': activeMenu === item.icon}).sidebar-menu__link
+        a(
+            href=item.items ? 'javascript:void(0)' : '#'
+            class={'active': activeMenu === item.icon, 'js-sidebar-link open' : item.items}
+        ).sidebar-menu__link
             if item.icon
                 +icon(item.icon).sidebar-menu__icon
             span.sidebar-menu__name=item.name
+            if item.items
+                span.sidebar-menu__state
         if item.items
-            ul.sidebar-menu__list
+            ul.sidebar-menu__list(class={'js-sidebar-list' : item.items.length})
                 for child in item.items
                     +sidebar-item(child)
 

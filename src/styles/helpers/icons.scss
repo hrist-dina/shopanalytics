@@ -9,21 +9,21 @@
 }
 
 .icon-burger {
-    @include icon-mobile-menu(2px, 22.5px);
+    @include icon-mobile-menu(2px, 20px);
     box-sizing: border-box;
-    margin: auto 3px;
+    margin: auto;
     cursor: pointer;
-    background-color: #f8981d;
+    background-color: #f27121;
     border-radius: 3px;
 
     &:before {
-        @include icon-mobile-menu-before(2px, 22.5px, -6.5px, #f8981d);
+        @include icon-mobile-menu-before(2px, 20px, -8px, #f27121);
         box-sizing: border-box;
         border-radius: 3px;
     }
 
     &:after {
-        @include icon-mobile-menu-after(2px, 22.5px, 7.5px, #f8981d);
+        @include icon-mobile-menu-after(2px, 20px, 8px, #f27121);
         box-sizing: border-box;
         border-radius: 3px;
     }
