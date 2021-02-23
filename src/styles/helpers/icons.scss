@@ -105,3 +105,8 @@
     @include wh(16px);
     @include icon-bgc(icon-plus());
 }
+
+.icon-download {
+    @include wh(17px,16px);
+    @include icon-bgc(icon-download());
+}

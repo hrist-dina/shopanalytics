@@ -73,3 +73,7 @@
 @function icon-link($color: "0575E6") {
     @return "data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 8V13H3V4H8M7 9L14 2M14 2H10M14 2V6' stroke='%23#{$color}' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A";
 }
+
+@function icon-download($color: "fff") {
+    @return "data:image/svg+xml,%3Csvg width='17' height='16' viewBox='0 0 17 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.127 5.33337H12.4603C13.0126 5.33337 13.4603 5.78109 13.4603 6.33337V13C13.4603 13.5523 13.0126 14 12.4603 14H5.12695C4.57467 14 4.12695 13.5523 4.12695 13V6.33337C4.12695 5.78109 4.57467 5.33337 5.12695 5.33337H6.46029' stroke='%23#{$color}' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M8.79362 11.3334V2.00004M8.79362 11.3334L7.12695 9.66671M8.79362 11.3334L10.4603 9.66671' stroke='%23#{$color}' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A";
+}

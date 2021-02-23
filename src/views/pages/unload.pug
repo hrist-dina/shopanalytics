@@ -1,0 +1,16 @@
+extends ../layouts/default
+
+block variables
+	- const title = 'Выгрузки'
+	- const activeMenu = 'unload'
+
+
+block content
+	include ../../blocks/modules/header/header
+	include ../../blocks/components/table/table
+	+header
+	+table-unload
+
+
+
+

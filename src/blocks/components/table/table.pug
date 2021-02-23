@@ -211,14 +211,36 @@ mixin table-report
                 '22 900.00'
             )
 
+mixin table-unload
+    +table-section(false)
+        thead
+            tr
+                th
+                    span.table-head-val №
+                th
+                    span.table-head-val Дата
+                th
+                    span.table-head-val Файл
+                th
+                    span.table-head-val Формат
+                th
+                    span.table-head-val Статус
+                th.text-right
+        tbody
+            - let i = 1
+            while i <= 4
+                +table-unload-row(i < 10 ? `0${i}`:i)
+                - i++
 
-mixin table-section
+
+mixin table-section(showFooter = true)
     section.table-section
         +container
             .table-wrap
                 table.table
                     block
-            +table-footer
+            if showFooter
+                +table-footer
 
 
 mixin table-footer(hasResult = true)
@@ -233,7 +255,16 @@ mixin table-footer(hasResult = true)
                     a(href='#').table-nav__left
                     a(href='#').table-nav__right
 
-
+mixin table-unload-row(number, date, file, format, status)
+    include ../ui-kit/ui-kit
+    tr
+        td=number
+        td=data || '2021-01-19 13:24:46'
+        td=file || '21_1611059086.tsv'
+        td=format || 'excel_csv_cp1251'
+        td=status || 'finished'
+        td.last
+            +button-link-icon('Скачать', 'download', 'download')
 
 mixin table-report-row(shop, count, priceAvg, priceMin, priceMax, priceSum)
     tr

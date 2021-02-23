@@ -148,6 +148,11 @@
         padding-left: 30px;
     }
 
+    & th.last, & td.last {
+        text-align: right;
+        padding-right: 0;
+    }
+
     &-footer {
         @include sm-block {
             @include row-flex;
