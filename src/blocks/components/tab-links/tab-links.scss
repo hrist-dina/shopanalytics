@@ -1,0 +1,26 @@
+.tab-links {
+    margin-bottom: -20px;
+    &__item {
+        text-decoration: none;
+        margin-right: 40px;
+        font-style: normal;
+        font-weight: $normal;
+        font-size: 20px;
+        line-height: 28px;
+        color: rgba(64, 64, 64, 0.4);
+        padding-bottom: 26px;
+        border-bottom: 4px solid transparent;
+        box-sizing: border-box;
+        display: inline-block;
+
+        &:hover {
+            color: rgba(5, 117, 230, );
+        }
+
+        &.active {
+            font-weight: 500;
+            color: #0575e6;
+            border-bottom-color: #0575e6;
+        }
+    }
+}

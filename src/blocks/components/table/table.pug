@@ -1,113 +1,225 @@
 
 mixin table
+    +table-section
+        thead
+            tr
+                th
+                    span.table-head-val №
+                    +table-sort
+                th.no-wrap
+                    span.table-head-val Магазины
+                    +table-sort
+                th
+                    span.table-head-val Бренд
+                    +table-sort
+                th.long
+                    span.table-head-val Название товара
+                    +table-sort('по релевантности')
+                th.text-right
+                    span.table-head-val Цена, руб.
+                    +table-sort
+                th.text-right
+                    span.table-head-val Цена по акции, руб.
+                    +table-sort
+                th
+                    span.table-head-val №
+                    +table-sort
+                th.no-wrap
+                    span.table-head-val Магазины
+                    +table-sort
+                th
+                    span.table-head-val Бренд
+                    +table-sort
+                th
+                    span.table-head-val Название товара
+                    +table-sort('по релевантности')
+                th.text-right
+                    span.table-head-val Цена, руб.
+                    +table-sort
+                th.text-right
+                    span.table-head-val Цена по акции, руб.
+                    +table-sort
+        tbody
+            +table-row(
+                '11108542',
+                'vasco.ru',
+                'Electrolux',
+                'Вертикальная стиральная машина, Electrolux EW6T5R061 Steam',
+                '26 900.00',
+                '26 900.00'
+            )
+            +table-row(
+                '11108542123',
+                'www.eldorado.ru',
+                'Hisense',
+                'Холодильник, Hisense RB-406N4AD1',
+                '126 900.00',
+                '96 900.00'
+            )
+            +table-row(
+                '11108',
+                'www.mvideo.ru',
+                'Indesit',
+                'Фронтальная стиральная машина, Indesit IWSC 5105',
+                '1 260 900.00',
+                '960 900.00'
+            )
+            +table-row(
+                '11108543',
+                'vasco.ru',
+                'Hisense',
+                'Холодильник Side-by-Side, Hisense RQ-56WC4SAW',
+                '16 900.00',
+                '9 900.00'
+            )
+            +table-row(
+                '11108544',
+                'www.dns-shop.ru',
+                'Electrolux',
+                'Вертикальная стиральная машина, Electrolux EW6T5R061 Steam',
+                '26 900.00',
+                '22 900.00'
+            )
+            +table-row(
+                '11108545',
+                'vasco.ru',
+                'Hisense',
+                'Холодильник, Hisense RB-406N4AD1',
+                '26 900.00',
+                '22 900.00'
+            )
+            +table-row(
+                '11108546',
+                'vasco.ru',
+                'Indesit',
+                'Фронтальная стиральная машина, Indesit IWSC 5105',
+                '26 900.00',
+                '22 900.00'
+            )
+            +table-row(
+                '11108546',
+                'vasco.ru',
+                'Hisense',
+                'Холодильник Side-by-Side, Hisense RQ-56WC4SAW',
+                '26 900.00',
+                '22 900.00'
+            )
+
+mixin table-report
+    +table-section
+        thead
+            tr
+                th.no-wrap
+                    span.table-head-val Магазины
+                    +table-sort
+                th.text-right
+                    span.table-head-val Количество наименований
+                    +table-sort
+                th.text-right
+                    span.table-head-val Средняя цена, руб.
+                    +table-sort
+                th.text-right
+                    span.table-head-val Мин. цена, руб.
+                    +table-sort
+                th.text-right
+                    span.table-head-val Макс. цена, руб.
+                    +table-sort
+                th.text-right
+                    span.table-head-val Сумма цен наименований, руб.
+                    +table-sort
+                th.no-wrap
+                    span.table-head-val Магазины
+                    +table-sort
+                th.text-right
+                    span.table-head-val Количество наименований
+                    +table-sort
+                th.text-right
+                    span.table-head-val Средняя цена, руб.
+                    +table-sort
+                th.text-right
+                    span.table-head-val Мин. цена, руб.
+                    +table-sort
+                th.text-right
+                    span.table-head-val Макс. цена, руб.
+                    +table-sort
+                th.text-right
+                    span.table-head-val Сумма цен наименований, руб.
+                    +table-sort
+        tbody
+            +table-report-row(
+                'vasco.ru',
+                '102',
+                '26 900.00',
+                '26 900.00',
+                '26 900.00',
+                '26 900.00'
+            )
+            +table-report-row(
+                'www.eldorado.ru',
+                '105',
+                '126 900.00',
+                '126 900.00',
+                '126 900.00',
+                '96 900.00'
+            )
+            +table-report-row(
+                'www.mvideo.ru',
+                '55',
+                '1 260 900.00',
+                '1 260 900.00',
+                '1 260 900.00',
+                '960 900.00'
+            )
+            +table-report-row(
+                'vasco.ru',
+                '120',
+                '16 900.00',
+                '16 900.00',
+                '16 900.00',
+                '9 900.00'
+            )
+            +table-report-row(
+                'www.dns-shop.ru',
+                '145',
+                '26 900.00',
+                '26 900.00',
+                '26 900.00',
+                '22 900.00'
+            )
+            +table-report-row(
+                'vasco.ru',
+                '55',
+                '26 900.00',
+                '26 900.00',
+                '26 900.00',
+                '22 900.00'
+            )
+            +table-report-row(
+                'vasco.ru',
+                '108',
+                '26 900.00',
+                '26 900.00',
+                '26 900.00',
+                '22 900.00'
+            )
+            +table-report-row(
+                'vasco.ru',
+                '69',
+                '26 900.00',
+                '26 900.00',
+                '26 900.00',
+                '22 900.00'
+            )
+
+
+mixin table-section
     section.table-section
         +container
             .table-wrap
                 table.table
-                    thead
-                        tr
-                            th
-                                span.table-head-val №
-                                +table-sort
-                            th.no-wrap
-                                span.table-head-val Магазины
-                                +table-sort
-                            th
-                                span.table-head-val Бренд
-                                +table-sort
-                            th.long
-                                span.table-head-val Название товара
-                                +table-sort('по релевантности')
-                            th.text-right
-                                span.table-head-val Цена, руб.
-                                +table-sort
-                            th.text-right
-                                span.table-head-val Цена по акции, руб.
-                                +table-sort
-                            th
-                                span.table-head-val №
-                                +table-sort
-                            th.no-wrap
-                                span.table-head-val Магазины
-                                +table-sort
-                            th
-                                span.table-head-val Бренд
-                                +table-sort
-                            th
-                                span.table-head-val Название товара
-                                +table-sort('по релевантности')
-                            th.text-right
-                                span.table-head-val Цена, руб.
-                                +table-sort
-                            th.text-right
-                                span.table-head-val Цена по акции, руб.
-                                +table-sort
-                    tbody
-                        +table-row(
-                            '11108542',
-                            'vasco.ru',
-                            'Electrolux',
-                            'Вертикальная стиральная машина, Electrolux EW6T5R061 Steam',
-                            '26 900.00',
-                            '26 900.00'
-                        )
-                        +table-row(
-                            '11108542123',
-                            'www.eldorado.ru',
-                            'Hisense',
-                            'Холодильник, Hisense RB-406N4AD1',
-                            '126 900.00',
-                            '96 900.00'
-                        )
-                        +table-row(
-                            '11108',
-                            'www.mvideo.ru',
-                            'Indesit',
-                            'Фронтальная стиральная машина, Indesit IWSC 5105',
-                            '1 260 900.00',
-                            '960 900.00'
-                        )
-                        +table-row(
-                            '11108543',
-                            'vasco.ru',
-                            'Hisense',
-                            'Холодильник Side-by-Side, Hisense RQ-56WC4SAW',
-                            '16 900.00',
-                            '9 900.00'
-                        )
-                        +table-row(
-                            '11108544',
-                            'www.dns-shop.ru',
-                            'Electrolux',
-                            'Вертикальная стиральная машина, Electrolux EW6T5R061 Steam',
-                            '26 900.00',
-                            '22 900.00'
-                        )
-                        +table-row(
-                            '11108545',
-                            'vasco.ru',
-                            'Hisense',
-                            'Холодильник, Hisense RB-406N4AD1',
-                            '26 900.00',
-                            '22 900.00'
-                        )
-                        +table-row(
-                            '11108546',
-                            'vasco.ru',
-                            'Indesit',
-                            'Фронтальная стиральная машина, Indesit IWSC 5105',
-                            '26 900.00',
-                            '22 900.00'
-                        )
-                        +table-row(
-                            '11108546',
-                            'vasco.ru',
-                            'Hisense',
-                            'Холодильник Side-by-Side, Hisense RQ-56WC4SAW',
-                            '26 900.00',
-                            '22 900.00'
-                        )
+                    block
             +table-footer
+
 
 mixin table-footer(hasResult = true)
     .table-footer
@@ -122,6 +234,21 @@ mixin table-footer(hasResult = true)
                     a(href='#').table-nav__right
 
 
+
+mixin table-report-row(shop, count, priceAvg, priceMin, priceMax, priceSum)
+    tr
+        td.no-wrap=shop
+        td.text-right=count
+        td.text-right=priceAvg
+        td.text-right=priceMin
+        td.text-right=priceMax
+        td.text-right=priceSum
+        td.no-wrap=shop
+        td.text-right=count
+        td.text-right=priceAvg
+        td.text-right=priceMin
+        td.text-right=priceMax
+        td.text-right=priceSum
 
 mixin table-row(number, shop, brand, product, price, priceSale)
     tr

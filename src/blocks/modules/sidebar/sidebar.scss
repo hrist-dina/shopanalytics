@@ -98,6 +98,10 @@
             }
         }
 
+        &__link.open + &__list &__link.active {
+            border-left: 2px solid #fff;
+        }
+
         &__item > &__list &__link {
             @include lg-block {
                 padding-left: 123px;

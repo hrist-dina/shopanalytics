@@ -21,7 +21,10 @@ mixin sidebar-item(item)
     li.sidebar-menu__item
         a(
             href=item.items ? 'javascript:void(0)' : '#'
-            class={'active': activeMenu === item.icon, 'js-sidebar-link open' : item.items}
+            class={
+                'active': activeMenu === item.icon || activeMenu === item.link,
+                'js-sidebar-link open' : item.items
+            }
         ).sidebar-menu__link
             if item.icon
                 +icon(item.icon).sidebar-menu__icon

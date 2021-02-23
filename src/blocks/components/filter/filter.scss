@@ -50,6 +50,10 @@
         margin-left: 8px;
         margin-top: 8px;
 
+        &-title {
+            width: #{calc(100% - 28px)};
+        }
+
         &-list {
             display: inline-flex;
             flex-wrap: wrap;

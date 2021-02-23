@@ -1,0 +1,22 @@
+extends ../layouts/default
+
+block variables
+	- const title = 'Пересечение ассортимента по видам товара'
+	- const activeMenu = 'reports-assert'
+
+
+block content
+	include ../../blocks/modules/header/header
+	include ../../blocks/components/filter/filter
+	include ../../blocks/components/filter/data
+	include ../../blocks/components/select/select
+	include ../../blocks/components/table/table
+	+header
+	+filter-section
+		+select(selectCategory, 'category')(data-placeholder='Категория')
+		+select(selectBrands, 'brand')(data-placeholder='Бренд')
+		+filter-tag-list(['Вид товара: куртка-ветровка, куртка дождевик, куртка-парка и еще 3 товара'])
+	+table-report
+
+
+

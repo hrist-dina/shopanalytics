@@ -5,49 +5,61 @@ mixin filter
     include ../select/select
     include ../ui-kit/ui-kit
     include ../price-slider/price-slider
+    +filter-section
+        +select(selectShop, 'shops')(multiple="multiple" data-placeholder='Магазины')
+        +select(selectGoods, 'goods')(data-placeholder='Товары')
+        +select(selectBrands, 'brands')(data-placeholder='Бренды')
+        +dropdown('Цена, руб').dropdown--simple
+            +price-slider({
+                title: 'Цена, руб.',
+                jsClass: 'js-price-slider',
+                step: 100,
+                price: {
+                    default: {
+                        min: 0,
+                        max: 50000,
+                    },
+                    filtered: {
+                        min: 10000,
+                        max: 30000,
+                    }
+                }
+            })
+        +dropdown('Цена по акции, руб').dropdown--simple
+            +price-slider({
+                title: 'Цена по акции, руб',
+                jsClass: 'js-price-slider',
+                step: 100,
+                price: {
+                    default: {
+                        min: 0,
+                        max: 50000,
+                    },
+                    filtered: {
+                        min: 10000,
+                        max: 30000,
+                    }
+                }
+            })
+        +filter-tag-list(['Категория: холодильники'])
+
+mixin filter-tag-list(data)
+    .filter__tag-list
+    for item in data
+        +filter-tag(item)
+
+mixin filter-tag(title)
+        .filter__tag
+            .filter__tag-title=title
+            a(href='#').filter__tag-clear
+
+mixin filter-section
+    include data
     section.filter
         +container
             .__inner
                 .__inner-left
                     .__select-list
-                        +select(selectShop, 'shops')(multiple="multiple" data-placeholder='Магазины')
-                        +select(selectGoods, 'goods')(data-placeholder='Товары')
-                        +select(selectBrands, 'brands')(data-placeholder='Бренды')
-                        +dropdown('Цена, руб').dropdown--simple
-                            +price-slider({
-                                title: 'Цена, руб.',
-                                jsClass: 'js-price-slider',
-                                step: 100,
-                                price: {
-                                    default: {
-                                        min: 0,
-                                        max: 50000,
-                                    },
-                                    filtered: {
-                                        min: 10000,
-                                        max: 30000,
-                                    }
-                                }
-                            })
-                        +dropdown('Цена по акции, руб').dropdown--simple
-                            +price-slider({
-                                title: 'Цена по акции, руб',
-                                jsClass: 'js-price-slider',
-                                step: 100,
-                                price: {
-                                    default: {
-                                        min: 0,
-                                        max: 50000,
-                                    },
-                                    filtered: {
-                                        min: 10000,
-                                        max: 30000,
-                                    }
-                                }
-                            })
-                        .__tag-list
-                            .__tag
-                                .__tag-title Категория: холодильники
-                                a(href='#').__tag-clear
+                        block
                 .__inner-right
                     +select(selectRange, 'range', 'js-select-round')

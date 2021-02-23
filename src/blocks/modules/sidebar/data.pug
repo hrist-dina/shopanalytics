@@ -1,12 +1,12 @@
 -
-    const getItem = (name, icon, items) => ({icon, name, items})
+    const getItem = (name, icon, items, link) => ({icon, name, items, link})
     const menu = {
         body: [
             getItem('Товары и цены', 'goods'),
             getItem('Отчет', 'report', [
-                getItem('Сводные отчеты'),
+                getItem('Сводные отчеты', false, false, 'reports'),
                 getItem('Ценовые сегменты'),
-                getItem('Пересечение ассортимента')
+                getItem('Пересечение ассортимента', false, false, 'reports-assert')
             ]),
             getItem('Магазины', 'shop'),
             getItem('Бренды', 'brand'),
