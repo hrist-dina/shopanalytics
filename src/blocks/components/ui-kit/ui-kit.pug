@@ -20,6 +20,9 @@ mixin link-icon(text, iconType, href)
         +icon(iconType)
         span=text
 
+mixin link-to(text)
+    a.link-to(href='#')&attributes(attributes)=text
+
 mixin field(name, placeholder, modifLabel, type)
     label.field.js-field(class!=modifLabel)
         span.field__placeholder
@@ -51,6 +54,11 @@ mixin field-checkbox(name, value, text, isChecked)
         input.field-checkbox__input(type="checkbox" name=name value=value checked!=isChecked)
         .field-checkbox__custom
         .field-checkbox__text=text
+
+mixin button-checkbox(name, value, text, isChecked)
+    label.button-checkbox&attributes(attributes)
+        input.button-checkbox__input(type="checkbox" name=name value=value checked!=isChecked)
+        .button-checkbox__text=text
 
 mixin field-radio(name, value, text, isChecked)
     label.field-radio&attributes(attributes)

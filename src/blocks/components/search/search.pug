@@ -1,0 +1,8 @@
+
+mixin search(placeholder)
+    include ../ui-kit/ui-kit
+    .search
+        form(action='' method='GET').__form
+            input.__input(name='q' placeholder=placeholder || 'Поиск по магазину')
+            button(type='submit').__button
+                +icon('search')

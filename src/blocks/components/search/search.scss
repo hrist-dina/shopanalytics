@@ -1,0 +1,36 @@
+.search {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    overflow: auto;
+    line-height: 0;
+    border: 1px solid #d8d8d8;
+    border-radius: 4px;
+
+    &__form {
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+
+    &__input {
+        @include outline-none();
+        box-sizing: border-box;
+        width: #{calc(100% - 24px)};
+        border: none;
+        padding: 16px 24px;
+        font-size: 16px;
+        line-height: 20px;
+        color: #404040;
+    }
+
+    &__button {
+        @include outline-none();
+        box-sizing: border-box;
+        display: flex;
+        margin: auto 20px auto auto;
+        border: none;
+        padding: 0;
+        background: transparent;
+    }
+}

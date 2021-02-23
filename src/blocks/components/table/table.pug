@@ -1,5 +1,4 @@
 
-
 mixin table
     section.table-section
         +container
@@ -108,15 +107,20 @@ mixin table
                             '26 900.00',
                             '22 900.00'
                         )
-            .table-footer
-                .table-footer__left
-                    .table-result Всего товаров найдено: 8 230 494 в 71 магазинах
-                .table-footer__right
-                    .table-nav
-                        span.table-nav__text 1-8 из 1240
-                        span.table-nav__block
-                            a(href='#').table-nav__left
-                            a(href='#').table-nav__right
+            +table-footer
+
+mixin table-footer(hasResult = true)
+    .table-footer
+        .table-footer__left
+            if hasResult
+                .table-result Всего товаров найдено: 8 230 494 в 71 магазинах
+        .table-footer__right
+            .table-nav
+                span.table-nav__text 1-8 из 1240
+                span.table-nav__block
+                    a(href='#').table-nav__left
+                    a(href='#').table-nav__right
+
 
 
 mixin table-row(number, shop, brand, product, price, priceSale)

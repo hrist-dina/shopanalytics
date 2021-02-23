@@ -1,0 +1,49 @@
+
+mixin table-flex
+    include table
+    include table-flex-data
+    section.table-flex-section
+        +container
+            .table-flex-wrap
+                .table-flex
+                    .table-flex__head
+                        .table-flex__row
+                            .table-flex__col
+                                span.table-head-val №
+                                +table-sort
+                            .table-flex__col
+                                span.table-head-val Название магазина
+                                +table-sort
+                            .table-flex__col.last
+                                .table-flex__head-data Вы добавили 6 магазинов
+                    .table-flex__body
+                        .table-flex__body-col
+                            - let number = 1
+                            for col in tableFlexCol
+                                +table-flex-row(
+                                    number < 10 ? `0${number}`:number,
+                                    col,
+                                    tableChecked.includes(number)
+                                )
+                                - number++
+
+                        .table-flex__body-col
+                            for col in tableFlexCol
+                                +table-flex-row(number, col, tableChecked.includes(number))
+                                - number++
+                +table-footer(false)
+
+mixin table-flex-row(number, name, isChecked)
+    include ../ui-kit/ui-kit
+    .table-flex__row
+        .table-flex__col
+            | #{number}
+        .table-flex__col
+            +link-to(name)
+        .table-flex__col.last
+            +button-checkbox(
+                'shops[]',
+                name,
+                isChecked ? 'Добавлено':'Добавить',
+                isChecked
+            )

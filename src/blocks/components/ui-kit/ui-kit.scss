@@ -72,6 +72,43 @@
         line-height: 20px;
         color: #fff;
     }
+
+    &-checkbox {
+        &__input {
+            display: none;
+        }
+
+        &__text {
+            box-sizing: border-box;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 145px;
+            border: 1px solid #0575e6;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-style: normal;
+            font-weight: $normal;
+            font-size: 15px;
+            line-height: 20px;
+            text-align: center;
+            color: #0575e6;
+            cursor: pointer;
+            transition: all .2s ease;
+        }
+
+        &__input:checked + &__text {
+            color: #fff;
+            background: #0575e6;
+            &:before {
+                @include wh(16px);
+                @include icon-bgc(icon-mark());
+                content: "";
+                position: relative;
+                margin-right: 10px;
+            }
+        }
+    }
 }
 
 .link {
@@ -97,6 +134,25 @@
         &:hover {
             color: rgba(0, 0, 0, .7);
             border-bottom-color: rgba(0, 0, 0, .7);
+        }
+    }
+
+    &-to {
+        font-style: normal;
+        font-weight: $normal;
+        font-size: 14px;
+        line-height: 20px;
+        display: inline-flex;
+        align-items: center;
+        color: #5e6366;
+        text-decoration: none;
+        position: relative;
+        &:after {
+            @include wh(16px);
+            @include icon-bgc(icon-link());
+            content: "";
+            position: relative;
+            margin-left: 4px;
         }
     }
 }
