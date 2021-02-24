@@ -1,0 +1,53 @@
+.person-tariff {
+    box-sizing: border-box;
+    padding: 24px 44px 44px;
+    background: #f7f9fa;
+    border-radius: 4px;
+
+    &__title {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 30px;
+        color: #263238;
+        margin-bottom: 24px;
+    }
+
+    &__subtitle {
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 20px;
+        color: #263239;
+        margin-top: 24px;
+        margin-bottom: 20px;
+    }
+
+    &__list {
+        max-width: 307px;
+    }
+
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 12px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__key {
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 20px;
+        color: #919699;
+    }
+
+    &__value {
+        font-weight: $normal;
+        font-size: 15px;
+        line-height: 20px;
+        text-align: right;
+        color: #404040;
+    }
+}

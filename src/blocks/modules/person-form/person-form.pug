@@ -1,6 +1,49 @@
 
 
 mixin person-form
+    include ../../components/ui-kit/ui-kit
+    include ../../components/person-tariff/person-tariff
     section.person-form-section
         +container
-            form.person-form
+            .person-form-wrap
+                form.person-form.form
+                    .person-form__left
+                        .person-form__avatar
+                            .person-form__avatar-pic(style='background-image: url(img/login/avatar-big.png)')
+                            label.person-form__avatar-file
+                                input(type='file' name='avatar').person-form__avatar-input
+                                .person-form__avatar-custom Поменять фото
+                    .person-form__right
+                        .person-form__row
+                            +field-icon(
+                                'person',
+                                'name',
+                                'Имя',
+                                false, false,
+                                'Степан Иванов'
+                            )(required='true')
+                        .person-form__row
+                            +field-icon(
+                                'mail',
+                                'email',
+                                'Электронная почта',
+                                false,
+                                'email',
+                                'pochta@mail.ru'
+                            )(required='true')
+                        .person-form__row
+                            +field-icon(
+                                'lock',
+                                'password',
+                                'Пароль',
+                                false,
+                                'password',
+                                '123456'
+                            )(required='true')
+                            +link-bordered('Изменить пароль')
+                        .person-form__footer
+                            +button-submit('Сохранить')
+                            +button('Отмена')
+                .person-form-tariff
+                    +person-tariff
+

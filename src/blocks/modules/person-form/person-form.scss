@@ -1,0 +1,88 @@
+.person-form {
+    @include col;
+    @include size(6);
+    display: flex;
+
+    &-section {
+        margin-top: 32px;
+    }
+
+    &-wrap {
+        @include row-flex;
+    }
+
+    &-tariff {
+        @include col;
+        @include size(4);
+    }
+
+    &__row {
+        margin-bottom: 24px;
+        & .field {
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        & .link {
+            display: inline-block;
+            margin-top: 13px;
+        }
+    }
+
+    &__avatar {
+        max-width: 150px;
+        margin-right: 50px;
+
+        &-pic {
+            @include wh(150px);
+            border-radius: 4px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            margin-bottom: 15px;
+        }
+
+        &-file {
+            cursor: pointer;
+        }
+
+        &-input {
+            display: none;
+        }
+
+        &-custom {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 20px;
+            background: #e7e9eb;
+            border-radius: 4px;
+            font-weight: $normal;
+            font-size: 15px;
+            line-height: 20px;
+            text-align: center;
+            color: #404040;
+        }
+    }
+
+    &__right {
+        width: 100%;
+        max-width: 496px;
+    }
+
+    &__footer {
+        margin-top: 44px;
+        .button {
+            width: auto;
+            padding: 16px 48px;
+            border-radius: 4px;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 20px;
+
+            & + .button {
+                margin-left: 12px;
+            }
+        }
+    }
+}

@@ -1,0 +1,20 @@
+
+
+mixin person-tariff
+    .person-tariff
+        .__title Текущий тариф
+        .__list
+            +person-tariff-item('Название', 'Мои конкуренты 500')
+            +person-tariff-item('Описание', 'Выбор до 500 сайтов')
+            +person-tariff-item('Стоимость', '2 000 000 руб. в месяц')
+        .__subtitle Возможности тарифа
+        .__list
+            +person-tariff-item(
+                'Количество доступных сайтов',
+                '500'
+            )
+            +person-tariff-item('Доступные категории', 'Все доступны')
+mixin person-tariff-item(key, value)
+    .person-tariff__item
+        span.person-tariff__key #{key}:
+        span.person-tariff__value=value
