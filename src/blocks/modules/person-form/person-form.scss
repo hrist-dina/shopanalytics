@@ -1,7 +1,12 @@
 .person-form {
     @include col;
-    @include size(6);
+    @include size-xl(6);
+    @include size(12);
+    @include md-block {
+        flex-direction: row;
+    }
     display: flex;
+    flex-direction: column;
 
     &-section {
         margin-top: 32px;
@@ -13,7 +18,12 @@
 
     &-tariff {
         @include col;
-        @include size(4);
+        @include size-xl(5);
+        @include size(12);
+        @include xl-block {
+            margin-top: 0;
+        }
+        margin-top: 32px;
     }
 
     &__row {
@@ -32,6 +42,7 @@
     &__avatar {
         max-width: 150px;
         margin-right: 50px;
+        margin-bottom: 20px;
 
         &-pic {
             @include wh(150px);
@@ -71,18 +82,32 @@
     }
 
     &__footer {
-        margin-top: 44px;
+        @include sm-block {
+            margin-top: 44px;
+        }
+        margin-top: 32px;
         .button {
-            width: auto;
+            @include sm-block {
+                width: auto;
+            }
+            width: 100%;
             padding: 16px 48px;
             border-radius: 4px;
             font-weight: 500;
             font-size: 16px;
             line-height: 20px;
+            margin-right: 12px;
+            margin-bottom: 10px;
+        }
+    }
 
-            & + .button {
-                margin-left: 12px;
-            }
+    & fieldset {
+        margin: auto;
+        border: none;
+        padding: 0;
+
+        &[disabled] {
+            display: none;
         }
     }
 }

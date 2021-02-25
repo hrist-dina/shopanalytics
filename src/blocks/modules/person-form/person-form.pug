@@ -6,7 +6,7 @@ mixin person-form
     section.person-form-section
         +container
             .person-form-wrap
-                form.person-form.form
+                form.person-form.form.js-person-form
                     .person-form__left
                         .person-form__avatar
                             .person-form__avatar-pic(style='background-image: url(img/login/avatar-big.png)')
@@ -31,16 +31,42 @@ mixin person-form
                                 'email',
                                 'pochta@mail.ru'
                             )(required='true')
-                        .person-form__row
-                            +field-icon(
-                                'lock',
-                                'password',
-                                'Пароль',
-                                false,
-                                'password',
-                                '123456'
-                            )(required='true')
-                            +link-bordered('Изменить пароль')
+                        fieldset.js-person-form-password
+                            .person-form__row
+                                +field-icon(
+                                    'lock',
+                                    'password',
+                                    'Пароль',
+                                    false,
+                                    'password',
+                                    '123456'
+                                )(required='true')
+                                +link-bordered('Изменить пароль').js-person-form-link
+                        fieldset.js-person-form-change-password(disabled="true")
+                            .person-form__row
+                                +field-icon(
+                                    'lock',
+                                    'old_password',
+                                    'Старый пароль',
+                                    false,
+                                    'password'
+                                )(required='true')
+                            .person-form__row
+                                +field-icon(
+                                    'lock',
+                                    'password',
+                                    'Новый пароль',
+                                    false,
+                                    'password'
+                                )(required='true')
+                            .person-form__row
+                                +field-icon(
+                                    'lock',
+                                    'password__confirm',
+                                    'Повторить пароль',
+                                    false,
+                                    'password'
+                                )(required='true')
                         .person-form__footer
                             +button-submit('Сохранить')
                             +button('Отмена')

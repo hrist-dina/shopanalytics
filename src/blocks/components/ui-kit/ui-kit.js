@@ -16,6 +16,12 @@ class UiKit {
             closeOnSelect: true,
             allowClear: false
         })
+        new Select('.js-select-simple', 'default', {
+            minimumResultsForSearch: Infinity,
+            addFooter: false,
+            closeOnSelect: true,
+            allowClear: false
+        })
     }
 }
 

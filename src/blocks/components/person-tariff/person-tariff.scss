@@ -1,6 +1,9 @@
 .person-tariff {
+    @include sm-block {
+        padding: 24px 44px 44px;
+    }
     box-sizing: border-box;
-    padding: 24px 44px 44px;
+    padding: 24px;
     background: #f7f9fa;
     border-radius: 4px;
 

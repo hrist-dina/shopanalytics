@@ -70,7 +70,7 @@ mixin button-submit(text)
     +button(text, 'submit', 'submit')
 
 mixin link-bordered(text, href)
-    +link(text, href || 'javascript:void(0)', 'bordered')
+    +link(text, href || 'javascript:void(0)', 'bordered')&attributes(attributes)
 
 
 mixin dropdown(title)

@@ -77,3 +77,7 @@
 @function icon-download($color: "fff") {
     @return "data:image/svg+xml,%3Csvg width='17' height='16' viewBox='0 0 17 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.127 5.33337H12.4603C13.0126 5.33337 13.4603 5.78109 13.4603 6.33337V13C13.4603 13.5523 13.0126 14 12.4603 14H5.12695C4.57467 14 4.12695 13.5523 4.12695 13V6.33337C4.12695 5.78109 4.57467 5.33337 5.12695 5.33337H6.46029' stroke='%23#{$color}' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M8.79362 11.3334V2.00004M8.79362 11.3334L7.12695 9.66671M8.79362 11.3334L10.4603 9.66671' stroke='%23#{$color}' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A";
 }
+
+@function icon-download-select($color: "333333") {
+    @return "data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 15.3334V17.3334C6 18.0698 6.59695 18.6667 7.33333 18.6667H16.6667C17.403 18.6667 18 18.0698 18 17.3334V15.3334' stroke='%23#{$color}' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M9.33301 12L11.9997 14.6667L14.6663 12' stroke='%23#{$color}' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M12 5.33337V14.6667' stroke='%23#{$color}' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A";
+}

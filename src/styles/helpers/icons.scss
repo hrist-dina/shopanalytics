@@ -110,3 +110,8 @@
     @include wh(17px,16px);
     @include icon-bgc(icon-download());
 }
+
+.icon-download-select {
+    @include wh(24px);
+    @include icon-bgc(icon-download-select());
+}

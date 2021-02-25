@@ -62,4 +62,8 @@ mixin filter-section
                     .__select-list
                         block
                 .__inner-right
+                    form.__unload
+                        button(type='submit').__unload-button
+                            +icon('download-select')
+                        +select(selectUnload, 'unload', 'js-select-simple')
                     +select(selectRange, 'range', 'js-select-round')
